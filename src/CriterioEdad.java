@@ -18,3 +18,4 @@ public class CriterioEdad implements Criterio{
         return p.getEdad()>this.getEdad();
     }
 }
+ 
