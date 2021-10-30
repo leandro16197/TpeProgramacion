@@ -22,7 +22,7 @@ public class Grupo extends ElementoParticipante {
     @Override
     public ArrayList getPreferenciaMusical() {
         ArrayList<String> aux =new ArrayList<>();
-        
+
         return null;
     }
 }
