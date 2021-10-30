@@ -1,3 +1,7 @@
+package TPE_Programacion.Criterio;
+
+import TPE_Programacion.Participante;
+
 public class CriterioGenero implements Criterio {
     private String genero;
 

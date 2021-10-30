@@ -1,9 +1,15 @@
+package TPE_Programacion;
+
+import TPE_Programacion.Busqueda.Busqueda;
+import TPE_Programacion.Criterio.Criterio;
+
 import java.util.ArrayList;
 
 public class Coach {
     private String nombre;
     private ArrayList<Participante>participantes;
-    //preguntar si nesesita atributo para saber si es jurado o no
+    //preguntar si nesesita atributo para saber si es jurado o
+
     public Coach(String nombre) {
         this.nombre = nombre;
         this.participantes=new ArrayList<>();
@@ -36,9 +42,13 @@ public class Coach {
 
     public ArrayList getLista(Busqueda busqueda) {
         ArrayList listaAux = new ArrayList();
+        ArrayList listaTemporal=new ArrayList();
         //preguntar si se tienen que pasar 2 tipos iguales o pueden ser distintos tipos de objetos
         for(int i=0;i<this.participantes.size();i++){
-            listaAux=busqueda.compare(listaAux,this.participantes.get(i));
+            listaTemporal=busqueda.compare(listaAux,this.participantes.get(i));
+            for(int j=0;j<listaTemporal.size();i++){
+                listaAux.add(listaTemporal.get(i));
+            }
         }
         return listaAux;
     }

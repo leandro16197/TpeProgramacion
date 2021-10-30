@@ -1,3 +1,7 @@
+package TPE_Programacion.Criterio;
+
+import TPE_Programacion.Participante;
+
 public class CriterioInstrumento implements Criterio {
     private String instrumento;
 

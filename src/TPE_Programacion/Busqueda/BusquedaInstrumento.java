@@ -1,6 +1,10 @@
+package TPE_Programacion.Busqueda;
+
+import TPE_Programacion.Participante;
+
 import java.util.ArrayList;
 
-public class BusquedaInstrumento implements Busqueda{
+public class BusquedaInstrumento implements Busqueda {
 
     @Override
     public ArrayList compare(ArrayList lista1, Participante p) {

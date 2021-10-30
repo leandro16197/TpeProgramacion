@@ -1,3 +1,7 @@
+package TPE_Programacion.Criterio;
+
+import TPE_Programacion.Participante;
+
 public class CriterioIDual implements Criterio {
     private Criterio comp1;
     private Criterio comp2;

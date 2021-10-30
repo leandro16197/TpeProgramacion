@@ -1,4 +1,8 @@
-public class CriterioEdad implements Criterio{
+package TPE_Programacion.Criterio;
+
+import TPE_Programacion.Participante;
+
+public class CriterioEdad implements Criterio {
     private int Edad;
 
     public CriterioEdad(int edad) {

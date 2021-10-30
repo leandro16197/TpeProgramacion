@@ -1,3 +1,7 @@
+package TPE_Programacion.Criterio;
+
+import TPE_Programacion.Participante;
+
 public class CriterioIdioma implements Criterio {
     private String idioma;
 

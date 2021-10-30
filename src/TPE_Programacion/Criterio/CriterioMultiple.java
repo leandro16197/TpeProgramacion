@@ -1,4 +1,8 @@
-public class CriterioMultiple implements Criterio{
+package TPE_Programacion.Criterio;
+
+import TPE_Programacion.Participante;
+
+public class CriterioMultiple implements Criterio {
     private Criterio criterio1;//criterio dual ingles y espanol
     private Criterio criterio2;//instrumento
     private Criterio criterio3;//genero

@@ -1,29 +1,21 @@
-import java.lang.reflect.Array;
+package TPE_Programacion;
+
 import java.util.ArrayList;
 
-public class Participante {
-    private String nombre;
+public class Participante extends ElementoParticipante{
     private String apellido;
     private int edad;
     private ArrayList<String>generosMusicales;
     private ArrayList<String>idiomas;
     private ArrayList<String>instrumentos;
 
-    public Participante(String nombre, String apellido, int edad) {
-        this.nombre = nombre;
+    public Participante( String nombre,String apellido, int edad) {
+        super(nombre);
         this.apellido = apellido;
         this.edad = edad;
         this.generosMusicales=new ArrayList<>();
         this.idiomas=new ArrayList<>();
         this.instrumentos=new ArrayList<>();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -32,10 +24,6 @@ public class Participante {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public int getEdad() {
-        return edad;
     }
 
     public void setEdad(int edad) {
@@ -62,6 +50,16 @@ public class Participante {
     }
     public ArrayList getInstrumentos(){
         return new ArrayList(this.instrumentos);
+    }
+
+    @Override
+    public ArrayList getPreferenciaMusical() {
+        return null;
+    }
+
+    @Override
+    public int getEdad() {
+        return this.edad;
     }
     @Override
     public String toString() {
