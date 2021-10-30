@@ -1,6 +1,7 @@
 package TPE_Programacion;
 
 
+import TPE_Programacion.Comparadores.Comparador;
 import TPE_Programacion.Criterio.Filtro;
 import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
@@ -58,6 +59,31 @@ public class Grupo extends ElementoParticipante {
         }
         return aux;
 
+    }
+
+    @Override
+    public int cantInstrumento() {
+        int total=0;
+        for(ElementoParticipante e:grupo){
+            total+= e.cantInstrumento();
+        }
+        return total;
+    }
+
+    @Override
+    public int cantGenero() {
+        int total=0;
+        for(ElementoParticipante e:grupo){
+            total+= e.cantGenero();
+        }
+        return total;
+    }
+    public int cantIdioma() {
+        int total=0;
+        for(ElementoParticipante e:grupo){
+            total+= e.cantIdioma();
+        }
+        return total;
     }
 
     @Override

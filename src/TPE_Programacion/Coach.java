@@ -5,6 +5,7 @@ import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Coach {
     private String nombre;
@@ -13,7 +14,7 @@ public class Coach {
 
     public Coach(String nombre) {
         this.nombre = nombre;
-        this.grupo=new ArrayList<>();
+        this.grupo = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -24,6 +25,11 @@ public class Coach {
         this.nombre = nombre;
     }
 
+    
+    public int batalla(ElementoParticipante e1, ElementoParticipante e2, Comparator<ElementoParticipante> comp) {
+    	return comp.compare(e1,e2);
+    }
+    
     public void addParticipante(ElementoParticipante e){
         this.grupo.add(e);
     }
@@ -49,6 +55,9 @@ public class Coach {
         }
         return listaAux;
     }
+
+
+
     public ArrayList getListaIdiomas(){
         ArrayList listaAux = new ArrayList();
         for(ElementoParticipante e:grupo){
@@ -68,7 +77,6 @@ public class Coach {
         }
         return promedio/cantParticipantes;
     }
-        @Override
         public String toString () {
             return "Coach Nombre : " + this.getNombre();
         }

@@ -11,24 +11,7 @@ public class FiltroIDual implements Filtro {
         this.comp2 = comp2;
     }
 
-    public Filtro getComp1() {
-        return comp1;
-    }
-
-    public void setComp1(Filtro comp1) {
-        this.comp1 = comp1;
-    }
-
-    public Filtro getComp2() {
-        return comp2;
-    }
-
-    public void setComp2(Filtro comp2) {
-        this.comp2 = comp2;
-    }
-
-    @Override
     public boolean criterio(Participante p) {
-        return this.getComp1().criterio(p) && this.getComp2().criterio(p);
+        return this.comp1.criterio(p) && this.comp2.criterio(p);
     }
 }

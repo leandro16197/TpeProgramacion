@@ -19,9 +19,6 @@ public class FiltroInstrumento implements Filtro {
 
     @Override
     public boolean criterio(Participante p) {
-            if(p.cumple(instrumento)){
-                return true;
-            }
-        return false;
+     return p.cumpleInstrumento(instrumento);
     }
 }

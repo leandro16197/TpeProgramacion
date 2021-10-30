@@ -34,6 +34,8 @@ public class Participante extends ElementoParticipante{
         this.edad = edad;
     }
 
+    
+    
     public void addGenero(String genero){
         this.generosMusicales.add(genero);
     }
@@ -87,6 +89,16 @@ public class Participante extends ElementoParticipante{
     }
 
     @Override
+    public int cantInstrumento() {
+        return this.instrumentos.size();
+    }
+    public int cantGenero() {
+        return this.generosMusicales.size();
+    }
+    public int cantIdioma() {
+        return this.idiomas.size();
+    }
+    @Override
     public int getCantidadGrupo() {
         return 1;
     }
@@ -113,7 +125,15 @@ public class Participante extends ElementoParticipante{
         aux.addAll(this.getGenero());
         return aux;
     }
-    public boolean cumple(String instrumento){
+    public boolean cumpleInstrumento(String instrumento){
         return this.getInstrumento().contains(instrumento);
     }
+    
+    public boolean cumpleGenero(String genero){
+        return this.getGenero().contains(genero);
+    }
+    public boolean cumpleIdioma(String genero){
+        return this.getIdiomas().contains(genero);
+    }
+    
 }

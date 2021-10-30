@@ -17,14 +17,10 @@ public class FiltroGenero implements Filtro {
         this.genero = genero;
     }
 
-    @Override
+
     public boolean criterio(Participante p) {
-        //ver de hacer el contains
-        for(int i=0;i<p.getGenero().size();i++){
-            if(p.getGenero().get(i)==this.getGenero()){
-                return true;
-            }
-        }
-        return false;
+    	return p.cumpleGenero(genero);
     }
+    	
+    	
 }

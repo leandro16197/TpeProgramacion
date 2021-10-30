@@ -1,6 +1,7 @@
 package TPE_Programacion;
 
 
+import TPE_Programacion.Comparadores.Comparador;
 import TPE_Programacion.Criterio.Filtro;
 import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
@@ -21,13 +22,15 @@ public abstract class ElementoParticipante {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public abstract int getEdad();
     //Preguntar comparador para preferenciaMuscical
 
     public abstract ArrayList getPreferenciaMusical();
     public abstract ArrayList<String> getIdiomas();
     public abstract ArrayList<String> getInstrumento();
+    public abstract int cantInstrumento();
+    public abstract int cantGenero();
+    public abstract int cantIdioma();
     public abstract int getCantidadGrupo();
     //public abstract ArrayList getLista(Busqueda busqueda);
     public abstract ArrayList getCantantes(Filtro f);
