@@ -1,5 +1,9 @@
 package TPE_Programacion;
 
+
+import TPE_Programacion.Criterio.Filtro;
+import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
+
 import java.util.ArrayList;
 
 public abstract class ElementoParticipante {
@@ -19,5 +23,14 @@ public abstract class ElementoParticipante {
     }
 
     public abstract int getEdad();
+    //Preguntar comparador para preferenciaMuscical
+
     public abstract ArrayList getPreferenciaMusical();
+    public abstract ArrayList<String> getIdiomas();
+    public abstract ArrayList<String> getInstrumento();
+    public abstract int getCantidadGrupo();
+    //public abstract ArrayList getLista(Busqueda busqueda);
+    public abstract ArrayList getCantantes(Filtro f);
+    public abstract ArrayList getListaInstrumentos();
+    public abstract ArrayList getListaGenero();
 }

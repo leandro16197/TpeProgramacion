@@ -1,6 +1,10 @@
 package TPE_Programacion;
 
+import TPE_Programacion.Criterio.Filtro;
+import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Participante extends ElementoParticipante{
     private String apellido;
@@ -54,7 +58,9 @@ public class Participante extends ElementoParticipante{
 
     @Override
     public ArrayList getPreferenciaMusical() {
-        return null;
+        ArrayList aux=new ArrayList();
+
+        return aux;
     }
 
     @Override
@@ -66,4 +72,48 @@ public class Participante extends ElementoParticipante{
         return "Nombre :"+this.getNombre()+" Apellido : "+this.getNombre()+" Edad : "+this.getEdad();
     }
 
+    @Override
+    public ArrayList<String> getIdiomas() {
+        ArrayList<String> aux=new ArrayList();
+        aux.addAll(this.getIdioma());
+        return null;
+    }
+
+    @Override
+    public ArrayList<String> getInstrumento() {
+        ArrayList<String >aux=new ArrayList<>();
+        aux.addAll(this.getInstrumentos());
+        return aux;
+    }
+
+    @Override
+    public int getCantidadGrupo() {
+        return 1;
+    }
+
+    @Override
+    public ArrayList getCantantes(Filtro f) {
+        ArrayList aux =new ArrayList<>();
+        if(f.criterio(this)){
+            aux.add(this);
+        }
+        return aux;
+    }
+
+    @Override
+    public ArrayList getListaInstrumentos() {
+        ArrayList aux =new ArrayList<>();
+        aux.addAll(this.getInstrumentos());
+        return aux;
+    }
+
+    @Override
+    public ArrayList getListaGenero() {
+        ArrayList aux=new ArrayList();
+        aux.addAll(this.getGenero());
+        return aux;
+    }
+    public boolean cumple(String instrumento){
+        return this.getInstrumento().contains(instrumento);
+    }
 }

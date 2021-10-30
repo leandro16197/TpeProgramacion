@@ -2,10 +2,10 @@ package TPE_Programacion.Criterio;
 
 import TPE_Programacion.Participante;
 
-public class CriterioGenero implements Criterio {
+public class FiltroGenero implements Filtro {
     private String genero;
 
-    public CriterioGenero(String genero) {
+    public FiltroGenero(String genero) {
         this.genero = genero;
     }
 

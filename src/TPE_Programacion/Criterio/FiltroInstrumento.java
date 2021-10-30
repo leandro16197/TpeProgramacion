@@ -2,10 +2,10 @@ package TPE_Programacion.Criterio;
 
 import TPE_Programacion.Participante;
 
-public class CriterioInstrumento implements Criterio {
+public class FiltroInstrumento implements Filtro {
     private String instrumento;
 
-    public CriterioInstrumento(String instrumento) {
+    public FiltroInstrumento(String instrumento) {
         this.instrumento = instrumento;
     }
 
@@ -19,11 +19,9 @@ public class CriterioInstrumento implements Criterio {
 
     @Override
     public boolean criterio(Participante p) {
-        for(int i=0;i<p.getInstrumentos().size();i++){
-            if(p.getInstrumentos().get(i)==this.getInstrumento()){
+            if(p.cumple(instrumento)){
                 return true;
             }
-        }
         return false;
     }
 }

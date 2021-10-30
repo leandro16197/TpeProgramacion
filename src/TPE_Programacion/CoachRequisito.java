@@ -1,15 +1,15 @@
 package TPE_Programacion;
 
-import TPE_Programacion.Criterio.Criterio;
+import TPE_Programacion.Criterio.Filtro;
 
 public class CoachRequisito extends Coach {
-    private Criterio criterio;
+    private Filtro filtro;
     //preguntar si se hace otro coach
-    public CoachRequisito(String nombre, Criterio criterio) {
+    public CoachRequisito(String nombre, Filtro filtro) {
         super(nombre);
     }
     public void addParticipante(Participante participante){
-        if(criterio.criterio(participante)){
+        if(filtro.criterio(participante)){
             super.addParticipante(participante);
         }
     }

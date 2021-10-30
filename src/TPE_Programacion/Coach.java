@@ -1,18 +1,19 @@
 package TPE_Programacion;
 
-import TPE_Programacion.Busqueda.Busqueda;
-import TPE_Programacion.Criterio.Criterio;
+import TPE_Programacion.Criterio.Filtro;
+import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Coach {
     private String nombre;
-    private ArrayList<Participante>participantes;
+    private ArrayList<ElementoParticipante>grupo;
     //preguntar si nesesita atributo para saber si es jurado o
 
     public Coach(String nombre) {
         this.nombre = nombre;
-        this.participantes=new ArrayList<>();
+        this.grupo=new ArrayList<>();
     }
 
     public String getNombre() {
@@ -23,31 +24,36 @@ public class Coach {
         this.nombre = nombre;
     }
 
-    public void addParticipante(Participante participante){
-        this.participantes.add(participante);
+    public void addParticipante(ElementoParticipante e){
+        this.grupo.add(e);
     }
     public ArrayList getParticipantes(){
-        return new ArrayList(this.participantes);
+        return new ArrayList(this.grupo);
     }
 
-    public ArrayList getCantantes(Criterio compor){
-        ArrayList<Participante>listaAux = new ArrayList();
-        for (int i=0;i<this.participantes.size();i++){
-            if(compor.criterio(this.participantes.get(i))){
-                listaAux.add(this.participantes.get(i));
-            }
+    public ArrayList getCantantes(Filtro f){
+        ArrayList<ElementoParticipante>listaAux = new ArrayList();
+        for(ElementoParticipante e:grupo){
+            listaAux.addAll(e.getCantantes(f));
         }
         return listaAux;
     }
+    public ArrayList getListaGenero(OrdenamientoGenero o){
 
-    public ArrayList getLista(Busqueda busqueda) {
+        return null;
+    }
+    public ArrayList getListaInstrumentos() {
         ArrayList listaAux = new ArrayList();
-        ArrayList listaTemporal=new ArrayList();
-        //preguntar si se tienen que pasar 2 tipos iguales o pueden ser distintos tipos de objetos
-        for(int i=0;i<this.participantes.size();i++){
-            listaTemporal=busqueda.compare(listaAux,this.participantes.get(i));
-            for(int j=0;j<listaTemporal.size();i++){
-                listaAux.add(listaTemporal.get(i));
+        for(ElementoParticipante e: grupo){
+            listaAux.addAll(e.getListaInstrumentos());
+        }
+        return listaAux;
+    }
+    public ArrayList getListaIdiomas(){
+        ArrayList listaAux = new ArrayList();
+        for(ElementoParticipante e:grupo){
+            if(!listaAux.contains(e.getIdiomas())){
+                listaAux.addAll(e.getIdiomas());
             }
         }
         return listaAux;
@@ -55,10 +61,12 @@ public class Coach {
 
     public double promedioEdad(){
         double promedio=0.0;
-        for (int i=0;i<this.participantes.size();i++){
-            promedio+= this.participantes.get(i).getEdad();
+        int cantParticipantes=0;
+        for(ElementoParticipante e:grupo){
+            promedio+=e.getEdad();
+            cantParticipantes+=e.getCantidadGrupo();
         }
-        return promedio/this.participantes.size();
+        return promedio/cantParticipantes;
     }
         @Override
         public String toString () {

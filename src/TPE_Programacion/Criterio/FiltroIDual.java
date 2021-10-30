@@ -2,28 +2,28 @@ package TPE_Programacion.Criterio;
 
 import TPE_Programacion.Participante;
 
-public class CriterioIDual implements Criterio {
-    private Criterio comp1;
-    private Criterio comp2;
+public class FiltroIDual implements Filtro {
+    private Filtro comp1;
+    private Filtro comp2;
 
-    public CriterioIDual(Criterio comp1, Criterio comp2) {
+    public FiltroIDual(Filtro comp1, Filtro comp2) {
         this.comp1 = comp1;
         this.comp2 = comp2;
     }
 
-    public Criterio getComp1() {
+    public Filtro getComp1() {
         return comp1;
     }
 
-    public void setComp1(Criterio comp1) {
+    public void setComp1(Filtro comp1) {
         this.comp1 = comp1;
     }
 
-    public Criterio getComp2() {
+    public Filtro getComp2() {
         return comp2;
     }
 
-    public void setComp2(Criterio comp2) {
+    public void setComp2(Filtro comp2) {
         this.comp2 = comp2;
     }
 

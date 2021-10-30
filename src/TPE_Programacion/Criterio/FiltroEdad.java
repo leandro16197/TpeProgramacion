@@ -2,10 +2,10 @@ package TPE_Programacion.Criterio;
 
 import TPE_Programacion.Participante;
 
-public class CriterioEdad implements Criterio {
+public class FiltroEdad implements Filtro {
     private int Edad;
 
-    public CriterioEdad(int edad) {
+    public FiltroEdad(int edad) {
         Edad = edad;
     }
 
