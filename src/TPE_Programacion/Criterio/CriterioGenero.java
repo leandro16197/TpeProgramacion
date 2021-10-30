@@ -19,6 +19,7 @@ public class CriterioGenero implements Criterio {
 
     @Override
     public boolean criterio(Participante p) {
+        //ver de hacer el contains
         for(int i=0;i<p.getGenero().size();i++){
             if(p.getGenero().get(i)==this.getGenero()){
                 return true;
