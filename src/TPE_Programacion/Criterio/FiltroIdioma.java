@@ -9,14 +9,6 @@ public class FiltroIdioma implements Filtro {
         this.idioma = idioma;
     }
 
-    public String getIdioma() {
-        return idioma;
-    }
-
-    public void setIdioma(String idioma) {
-        this.idioma = idioma;
-    }
-
     public boolean criterio(Participante p) {
     	return p.cumpleIdioma(idioma);
     }

@@ -9,14 +9,6 @@ public class FiltroInstrumento implements Filtro {
         this.instrumento = instrumento;
     }
 
-    public String getInstrumento() {
-        return instrumento;
-    }
-
-    public void setInstrumento(String instrumento) {
-        this.instrumento = instrumento;
-    }
-
     @Override
     public boolean criterio(Participante p) {
      return p.cumpleInstrumento(instrumento);

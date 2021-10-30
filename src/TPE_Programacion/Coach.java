@@ -56,8 +56,6 @@ public class Coach {
         return listaAux;
     }
 
-
-
     public ArrayList getListaIdiomas(){
         ArrayList listaAux = new ArrayList();
         for(ElementoParticipante e:grupo){
