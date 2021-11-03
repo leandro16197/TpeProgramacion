@@ -18,7 +18,9 @@ public class Grupo extends ElementoParticipante {
 
     @Override
     public int getEdad() {
+
         int total=0,cantIntegrantes=0;
+
         for(ElementoParticipante g:grupo){
             total+=g.getEdad();
             cantIntegrantes+=g.getCantidadGrupo();
@@ -28,9 +30,13 @@ public class Grupo extends ElementoParticipante {
     //preguntar
     @Override
     public ArrayList getPreferenciaMusical() {
-        ArrayList<String> aux =new ArrayList<>();
-        for(ElementoParticipante e:grupo){
-            aux.addAll(e.getPreferenciaMusical());
+        ArrayList aux =new ArrayList<>();
+        for (int i=0; i < grupo.size(); i++ ){
+            for(int j=0; j < grupo.get(i).getPreferenciaMusical().size();j++){
+                if(grupo.get(i).getPreferenciaMusical().get(j).equals(grupo.get(i+1).getPreferenciaMusical().get(j))) {
+                    aux.add(grupo.get(i).getPreferenciaMusical().get(j));
+                }
+            }
         }
         return aux;
     }

@@ -75,7 +75,8 @@ public class Coach {
         }
         return promedio/cantParticipantes;
     }
-        public String toString () {
+
+    public String toString () {
             return "Coach Nombre : " + this.getNombre();
         }
 }
