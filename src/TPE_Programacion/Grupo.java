@@ -13,17 +13,19 @@ public class Grupo extends ElementoParticipante {
 
     public Grupo(String nombre, ArrayList<ElementoParticipante> grupo) {
         super(nombre);
-        this.grupo = grupo;
+        this.grupo = new ArrayList<>();
     }
 
     @Override
     public int getEdad() {
-        int total=0;
-        int cant = 0;
+
+        int total=0,cantIntegrantes=0;
+
         for(ElementoParticipante g:grupo){
             total+=g.getEdad();
+            cantIntegrantes+=g.getCantidadGrupo();
         }
-        return total;
+        return total/cantIntegrantes;
     }
     //preguntar
     @Override
