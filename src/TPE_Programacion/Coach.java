@@ -10,8 +10,6 @@ import java.util.Comparator;
 public class Coach {
     private String nombre;
     private ArrayList<ElementoParticipante>grupo;
-    //preguntar si nesesita atributo para saber si es jurado o
-
     public Coach(String nombre) {
         this.nombre = nombre;
         this.grupo = new ArrayList<>();
@@ -25,11 +23,6 @@ public class Coach {
         this.nombre = nombre;
     }
 
-    
-    public int batalla(ElementoParticipante e1, ElementoParticipante e2, Comparator<ElementoParticipante> comp) {
-    	return comp.compare(e1,e2);
-    }
-    
     public void addParticipante(ElementoParticipante e){
         this.grupo.add(e);
     }

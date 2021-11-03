@@ -69,7 +69,7 @@ public class Participante extends ElementoParticipante{
     }
     @Override
     public String toString() {
-        return "Nombre :"+this.getNombre()+" Apellido : "+this.getNombre()+" Edad : "+this.getEdad();
+        return "Nombre :"+this.getNombre()+" Apellido : "+this.getApellido()+" Edad : "+this.getEdad();
     }
 
     @Override
