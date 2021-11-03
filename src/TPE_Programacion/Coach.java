@@ -1,17 +1,22 @@
 package TPE_Programacion;
 
+import TPE_Programacion.Comparadores.CompEdad;
+import TPE_Programacion.Comparadores.Comparador;
 import TPE_Programacion.Criterio.Filtro;
-import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
+
 
 public class Coach {
     private String nombre;
+    private Comparador comparador;
     private ArrayList<ElementoParticipante>grupo;
+
     public Coach(String nombre) {
         this.nombre = nombre;
+        this.comparador=new CompEdad();
         this.grupo = new ArrayList<>();
     }
 
@@ -37,9 +42,12 @@ public class Coach {
         }
         return listaAux;
     }
-    public ArrayList getListaGenero(OrdenamientoGenero o){
-
-        return null;
+    public ArrayList getListaGenero(){
+        ArrayList aux=new ArrayList();
+        for(ElementoParticipante e:grupo){
+            aux.addAll(e.getListaGenero());
+        }
+        return aux;
     }
     public ArrayList getListaInstrumentos() {
         ArrayList listaAux = new ArrayList();
@@ -57,6 +65,11 @@ public class Coach {
             }
         }
         return listaAux;
+    }
+    public ArrayList getListaParticipantesOrdenada(Comparador c){
+        ArrayList aux=new ArrayList(this.grupo);
+        Collections.sort(aux,c);
+        return aux;
     }
 
     public double promedioEdad(){

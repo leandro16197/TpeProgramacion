@@ -3,7 +3,6 @@ package TPE_Programacion;
 
 import TPE_Programacion.Comparadores.Comparador;
 import TPE_Programacion.Criterio.Filtro;
-import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
 import java.util.ArrayList;
 import java.util.Collections;
