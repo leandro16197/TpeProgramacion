@@ -23,8 +23,8 @@ public abstract class ElementoParticipante {
         this.nombre = nombre;
     }
     public abstract int getEdad();
-    //Preguntar comparador para preferenciaMuscical
 
+    //Preguntar comparador para preferenciaMuscical
     public abstract ArrayList getPreferenciaMusical();
     public abstract ArrayList<String> getIdiomas();
     public abstract ArrayList<String> getInstrumento();

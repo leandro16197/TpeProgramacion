@@ -60,9 +60,7 @@ public class Participante extends ElementoParticipante{
 
     @Override
     public ArrayList getPreferenciaMusical() {
-        ArrayList aux=new ArrayList();
-
-        return aux;
+        return this.getGenero();
     }
 
     @Override
