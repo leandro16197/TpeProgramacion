@@ -20,7 +20,7 @@ public class Main {
         Coach c=new Coach("coach");
         c.addParticipante(pepe);
         c.addParticipante(pepe2);
-        System.out.println(c.getParticipantes());
+
         Coach c2=new Coach("coach2");
         Participante carlos=new Participante("carlos","c",2);
         carlos.addGenero("rock");
@@ -34,11 +34,10 @@ public class Main {
         kun.addInstrumento("triangulo");
         c2.addParticipante(kun);
         c2.addParticipante(carlos);
+        System.out.println(c2.getParticipantes());
         Reality r=new Reality("show");
         r.addCoach(c);
         r.addCoach(c2);
         System.out.println(r.batalla(kun,carlos,edad));
-
     }
-
 }

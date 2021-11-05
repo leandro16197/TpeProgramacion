@@ -42,17 +42,24 @@ public class Coach {
         }
         return listaAux;
     }
+
+
     public ArrayList<String> getListaGenero(){
         ArrayList<String> aux=new ArrayList();
         for(ElementoParticipante e:grupo){
             aux.addAll(e.getListaGenero());
         }
+        Collections.sort(aux);
         return aux;
     }
+
+
     public ArrayList<String> getListaInstrumentos() {
         ArrayList<String> listaAux = new ArrayList();
         for(ElementoParticipante e: grupo){
-            listaAux.addAll(e.getListaInstrumentos());
+            if(!listaAux.contains(e.getListaInstrumentos())){
+                listaAux.addAll(e.getListaInstrumentos());
+            }
         }
         return listaAux;
     }

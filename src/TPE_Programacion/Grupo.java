@@ -15,17 +15,23 @@ public class Grupo extends ElementoParticipante {
         this.grupo = new ArrayList<>();
     }
 
+    public void add(ElementoParticipante e){
+        this.grupo.add(e);
+    }
+
+    public ArrayList<ElementoParticipante> getGrupo(){
+        return new ArrayList<>(grupo);
+    }
+
+
     //retorna el promedio de edad de todos los participantes
     @Override
     public int getEdad() {
-
-        int total=0,cantIntegrantes=0;
-
+        int total=0;
         for(ElementoParticipante g:grupo){
             total+=g.getEdad();
-            cantIntegrantes+=g.getCantidadGrupo();
         }
-        return total/cantIntegrantes;
+        return total;
     }
 
     //retorna una lista de generos musicales que hagan intersección en los generos de preferencia de todos
@@ -106,8 +112,12 @@ public class Grupo extends ElementoParticipante {
     @Override
     public ArrayList<ElementoParticipante> getCantantes(Filtro f) {
         ArrayList<ElementoParticipante> aux =new ArrayList<>();
-        for (ElementoParticipante e:grupo){
-            aux.addAll(e.getCantantes(f));
+        if(f.criterio(this)){
+            aux.add(this);
+        }else{
+            for (ElementoParticipante e:grupo){
+                aux.addAll(e.getCantantes(f));
+            }
         }
         return aux;
     }
@@ -118,7 +128,6 @@ public class Grupo extends ElementoParticipante {
         for(ElementoParticipante e:grupo){
             aux.addAll(e.getListaGenero());
         }
-        Collections.sort(aux);
         return aux;
     }
     //criterios

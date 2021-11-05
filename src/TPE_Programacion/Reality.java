@@ -26,5 +26,4 @@ public class Reality {
         }
         return 0;
     }
-
 }
