@@ -1,5 +1,6 @@
 package TPE_Programacion.Criterio;
 
+import TPE_Programacion.ElementoParticipante;
 import TPE_Programacion.Participante;
 
 public class FiltroIdioma implements Filtro {
@@ -9,7 +10,7 @@ public class FiltroIdioma implements Filtro {
         this.idioma = idioma;
     }
 
-    public boolean criterio(Participante p) {
+    public boolean criterio(ElementoParticipante p) {
     	return p.cumpleIdioma(idioma);
     }
     	

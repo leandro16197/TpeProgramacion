@@ -1,6 +1,7 @@
 package TPE_Programacion.Criterio;
 
-import TPE_Programacion.Participante;
+import TPE_Programacion.ElementoParticipante;
+
 
 public class FiltroGenero implements Filtro {
     private String genero;
@@ -9,7 +10,7 @@ public class FiltroGenero implements Filtro {
         this.genero = genero;
     }
 
-    public boolean criterio(Participante p) {
+    public boolean criterio(ElementoParticipante p) {
     	return p.cumpleGenero(genero);
     }
     	

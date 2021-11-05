@@ -1,10 +1,8 @@
 package TPE_Programacion;
 
 import TPE_Programacion.Criterio.Filtro;
-import TPE_Programacion.Ordenamiento.OrdenamientoGenero;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Participante extends ElementoParticipante{
     private String apellido;
@@ -35,7 +33,7 @@ public class Participante extends ElementoParticipante{
     }
 
     
-    
+    //agrega items de tipo String a cada una de las listas
     public void addGenero(String genero){
         this.generosMusicales.add(genero);
     }
@@ -48,62 +46,26 @@ public class Participante extends ElementoParticipante{
             this.instrumentos.add(instrumento);
         }
     }
-    public ArrayList getGenero(){
+
+    //retorna lista de generos musicales
+    @Override
+    public ArrayList<String>  getPreferenciaMusical() {
         return new ArrayList(this.generosMusicales);
     }
-    public ArrayList getIdioma(){
-        return new ArrayList(this.idiomas);
-    }
-    public ArrayList getInstrumentos(){
-        return new ArrayList(this.instrumentos);
-    }
-
-    @Override
-    public ArrayList getPreferenciaMusical() {
-        return this.getGenero();
-    }
-
-    @Override
-    public int getEdad() {
-        return this.edad;
-    }
-    @Override
-    public String toString() {
-        return "Nombre :"+this.getNombre()+" Apellido : "+this.getApellido()+" Edad : "+this.getEdad();
-    }
-
+    //retorna lista de idiomas
     @Override
     public ArrayList<String> getIdiomas() {
-        ArrayList<String> aux=new ArrayList();
-        aux.addAll(this.getIdioma());
-        return null;
+        return new ArrayList(this.idiomas);
     }
 
-    @Override
-    public ArrayList<String> getInstrumento() {
-        ArrayList<String >aux=new ArrayList<>();
-        aux.addAll(this.getInstrumentos());
-        return aux;
-    }
-
-    @Override
-    public int cantInstrumento() {
-        return this.instrumentos.size();
-    }
-    public int cantGenero() {
-        return this.generosMusicales.size();
-    }
-    public int cantIdioma() {
-        return this.idiomas.size();
-    }
     @Override
     public int getCantidadGrupo() {
         return 1;
     }
 
     @Override
-    public ArrayList getCantantes(Filtro f) {
-        ArrayList aux =new ArrayList<>();
+    public ArrayList<ElementoParticipante> getCantantes(Filtro f) {
+        ArrayList<ElementoParticipante> aux =new ArrayList<>();
         if(f.criterio(this)){
             aux.add(this);
         }
@@ -111,27 +73,73 @@ public class Participante extends ElementoParticipante{
     }
 
     @Override
-    public ArrayList getListaInstrumentos() {
-        ArrayList aux =new ArrayList<>();
-        aux.addAll(this.getInstrumentos());
-        return aux;
+    public ArrayList<String> getListaInstrumentos() {
+        return new ArrayList(this.instrumentos);
     }
 
     @Override
-    public ArrayList getListaGenero() {
-        ArrayList aux=new ArrayList();
-        aux.addAll(this.getGenero());
-        return aux;
+    public ArrayList<String>getListaGenero() {
+        return this.getPreferenciaMusical();
     }
+
+    //para los criterios
     public boolean cumpleInstrumento(String instrumento){
-        return this.getInstrumento().contains(instrumento);
+        return this.getListaInstrumentos().contains(instrumento);
     }
     
     public boolean cumpleGenero(String genero){
-        return this.getGenero().contains(genero);
+        return this.getListaGenero().contains(genero);
     }
-    public boolean cumpleIdioma(String genero){
-        return this.getIdiomas().contains(genero);
+    public boolean cumpleIdioma(String idioma){
+        return this.getIdiomas().contains(idioma);
     }
-    
+
+    //retornan la cantidad de instrumentos
+    @Override
+    public int cantInstrumento() {
+        return this.instrumentos.size();
+    }
+    //retornan la cantidad de generos
+    @Override
+    public int cantGenero() {
+        return this.generosMusicales.size();
+    }
+    //retornan la cantidad de idiomas
+    @Override
+    public int cantIdioma() {
+        return this.idiomas.size();
+    }
+
+    //retorna la edad
+    @Override
+    public int getEdad() {
+        return this.edad;
+    }
+    //datos participante
+    @Override
+    public String toString() {
+        return "Nombre : "+this.getNombre()+" Apellido : "+this.getApellido()+" Edad : "+this.getEdad();
+    }
+    //filtro tema musical
+
+
+    @Override
+    public boolean preferencia(ArrayList genero) {
+        for (int i = 0;i<genero.size();i++){
+            if(this.getListaGenero().contains(genero.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean cumpleInstrumento(ArrayList instrumentos) {
+        for (int i = 0;i<instrumentos.size();i++){
+            if(this.getListaInstrumentos().contains(instrumentos.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
 }

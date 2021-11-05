@@ -16,7 +16,6 @@ public class Main {
         pepe2.addIdioma("ingles");
         pepe2.addInstrumento("triangulo");
 
-        System.out.println(pepe2.getInstrumento());
         CompEdad edad=new CompEdad();
         Coach c=new Coach("coach");
         c.addParticipante(pepe);

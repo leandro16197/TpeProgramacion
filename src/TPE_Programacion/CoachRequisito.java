@@ -10,7 +10,7 @@ public class CoachRequisito extends Coach {
         this.filtro = filtro;
     }
 
-    public void addParticipante(Participante e){
+    public void addParticipante(ElementoParticipante e){
         if(filtro.criterio(e)){
             super.addParticipante(e);
         }

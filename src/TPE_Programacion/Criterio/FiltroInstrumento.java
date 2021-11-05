@@ -1,5 +1,6 @@
 package TPE_Programacion.Criterio;
 
+import TPE_Programacion.ElementoParticipante;
 import TPE_Programacion.Participante;
 
 public class FiltroInstrumento implements Filtro {
@@ -10,7 +11,7 @@ public class FiltroInstrumento implements Filtro {
     }
 
     @Override
-    public boolean criterio(Participante p) {
+    public boolean criterio(ElementoParticipante p) {
      return p.cumpleInstrumento(instrumento);
     }
 }

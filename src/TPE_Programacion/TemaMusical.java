@@ -37,7 +37,7 @@ public class TemaMusical {
         this.listaInstrumentos.add(instrumento);
     }
 
-    public ArrayList getGenero(){
+    public ArrayList<String> getGenero(){
         return new ArrayList(this.listaGeneros);
     }
     public ArrayList getInstrumentos(){

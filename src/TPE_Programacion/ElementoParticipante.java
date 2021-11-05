@@ -1,7 +1,6 @@
 package TPE_Programacion;
 
 
-import TPE_Programacion.Comparadores.Comparador;
 import TPE_Programacion.Criterio.Filtro;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ public abstract class ElementoParticipante {
 
     public ElementoParticipante(String nombre) {
         this.nombre=nombre;
-
     }
 
     public String getNombre() {
@@ -22,17 +20,23 @@ public abstract class ElementoParticipante {
         this.nombre = nombre;
     }
     public abstract int getEdad();
-
-    //Preguntar comparador para preferenciaMuscical
-    public abstract ArrayList getPreferenciaMusical();
+    public abstract ArrayList<String>  getPreferenciaMusical();
     public abstract ArrayList<String> getIdiomas();
-    public abstract ArrayList<String> getInstrumento();
     public abstract int cantInstrumento();
     public abstract int cantGenero();
     public abstract int cantIdioma();
     public abstract int getCantidadGrupo();
-    //public abstract ArrayList getLista(Busqueda busqueda);
-    public abstract ArrayList getCantantes(Filtro f);
-    public abstract ArrayList getListaInstrumentos();
-    public abstract ArrayList getListaGenero();
+
+    public abstract ArrayList<ElementoParticipante> getCantantes(Filtro f);
+    public abstract ArrayList<String> getListaInstrumentos();
+    public abstract ArrayList<String> getListaGenero();
+
+    //criterios
+    public abstract boolean cumpleInstrumento(String instrumento);
+    public abstract boolean cumpleIdioma(String idioma);
+    public abstract boolean cumpleGenero(String genero);
+
+    //criterio TemaMusical preguntar
+    public abstract boolean preferencia(ArrayList genero);
+    public abstract boolean cumpleInstrumento(ArrayList instrumentos);
 }

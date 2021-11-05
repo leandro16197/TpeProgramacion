@@ -1,9 +1,9 @@
 package TPE_Programacion.Criterio;
 
-import TPE_Programacion.Participante;
+import TPE_Programacion.ElementoParticipante;
 
 public interface Filtro {
 
-    boolean criterio(Participante p);
+    boolean criterio(ElementoParticipante p);
 }
 

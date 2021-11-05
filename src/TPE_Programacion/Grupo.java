@@ -15,6 +15,7 @@ public class Grupo extends ElementoParticipante {
         this.grupo = new ArrayList<>();
     }
 
+    //retorna el promedio de edad de todos los participantes
     @Override
     public int getEdad() {
 
@@ -26,10 +27,11 @@ public class Grupo extends ElementoParticipante {
         }
         return total/cantIntegrantes;
     }
-    //preguntar
+
+    //retorna una lista de generos musicales que hagan intersección en los generos de preferencia de todos
     @Override
-    public ArrayList getPreferenciaMusical() {
-        ArrayList aux =new ArrayList<>();
+    public ArrayList<String>  getPreferenciaMusical() {
+        ArrayList<String>  aux =new ArrayList<>();
         for (int i=0; i < grupo.size(); i++ ){
             for(int j=0; j < grupo.get(i).getPreferenciaMusical().size();j++){
                 if(grupo.get(i).getPreferenciaMusical().get(j).equals(grupo.get(i+1).getPreferenciaMusical().get(j))) {
@@ -39,6 +41,9 @@ public class Grupo extends ElementoParticipante {
         }
         return aux;
     }
+
+    //retorna una lista de idiomas no repetidos
+    @Override
     public ArrayList<String> getIdiomas(){
         ArrayList<String> aux =new ArrayList<>();
         for(ElementoParticipante e:grupo){
@@ -48,6 +53,8 @@ public class Grupo extends ElementoParticipante {
         }
         return aux;
     }
+    //retorna la catidad de participantes
+    @Override
     public  int getCantidadGrupo(){
         int total=0;
         for(ElementoParticipante e:grupo){
@@ -55,18 +62,8 @@ public class Grupo extends ElementoParticipante {
         }
         return total;
     }
-    @Override
-    public ArrayList<String> getInstrumento() {
-        ArrayList<String> aux =new ArrayList<>();
-        for(ElementoParticipante e:grupo){
-            if(!aux.contains(e.getInstrumento())){
-                aux.addAll(e.getInstrumento());
-            }
-        }
-        return aux;
 
-    }
-
+    //retorna la cantidad de insturmnentos total
     @Override
     public int cantInstrumento() {
         int total=0;
@@ -75,7 +72,7 @@ public class Grupo extends ElementoParticipante {
         }
         return total;
     }
-
+    //retorna la cantidad de generos total
     @Override
     public int cantGenero() {
         int total=0;
@@ -84,6 +81,8 @@ public class Grupo extends ElementoParticipante {
         }
         return total;
     }
+    //retorna la cantidad de idiomas total
+    @Override
     public int cantIdioma() {
         int total=0;
         for(ElementoParticipante e:grupo){
@@ -92,8 +91,9 @@ public class Grupo extends ElementoParticipante {
         return total;
     }
 
+    //retorna una lista de instrumentos no repetidos
     @Override
-    public ArrayList getListaInstrumentos() {
+    public ArrayList<String> getListaInstrumentos() {
         ArrayList<String> aux =new ArrayList<>();
         for(ElementoParticipante e:grupo){
             if(!aux.contains(e.getListaInstrumentos())){
@@ -102,23 +102,76 @@ public class Grupo extends ElementoParticipante {
         }
         return aux;
     }
-
+    //retorna lista de cantantes segun un criterio
     @Override
-    public ArrayList getCantantes(Filtro f) {
-        ArrayList aux =new ArrayList<>();
+    public ArrayList<ElementoParticipante> getCantantes(Filtro f) {
+        ArrayList<ElementoParticipante> aux =new ArrayList<>();
         for (ElementoParticipante e:grupo){
             aux.addAll(e.getCantantes(f));
         }
         return aux;
     }
+    //retorna una lista de generos no repetidas
     @Override
-    public ArrayList getListaGenero() {
+    public ArrayList<String> getListaGenero() {
         ArrayList<String> aux=new ArrayList();
         for(ElementoParticipante e:grupo){
             aux.addAll(e.getListaGenero());
         }
         Collections.sort(aux);
         return aux;
+    }
+    //criterios
+
+    @Override
+    public boolean cumpleInstrumento(String instrumento) {
+        for(ElementoParticipante e : grupo){
+            if(e.cumpleInstrumento(instrumento)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean cumpleIdioma(String idioma) {
+        for (ElementoParticipante e:grupo){
+            if(e.cumpleIdioma(idioma)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean cumpleGenero(String genero) {
+        for (ElementoParticipante e:grupo){
+            if(e.cumpleGenero(genero)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+    //filtro
+
+    @Override
+    public boolean preferencia(ArrayList genero) {
+        for(ElementoParticipante e:grupo){
+            if(e.preferencia(genero)){
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public boolean cumpleInstrumento(ArrayList instrumentos) {
+        for(ElementoParticipante e:grupo){
+            if(e.cumpleInstrumento(instrumentos)){
+                return true;
+            }
+        }
+        return false;
     }
 }
 

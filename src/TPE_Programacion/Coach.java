@@ -35,30 +35,30 @@ public class Coach {
         return new ArrayList(this.grupo);
     }
 
-    public ArrayList getCantantes(Filtro f){
+    public ArrayList<ElementoParticipante> getCantantes(Filtro f){
         ArrayList<ElementoParticipante>listaAux = new ArrayList();
         for(ElementoParticipante e:grupo){
             listaAux.addAll(e.getCantantes(f));
         }
         return listaAux;
     }
-    public ArrayList getListaGenero(){
-        ArrayList aux=new ArrayList();
+    public ArrayList<String> getListaGenero(){
+        ArrayList<String> aux=new ArrayList();
         for(ElementoParticipante e:grupo){
             aux.addAll(e.getListaGenero());
         }
         return aux;
     }
-    public ArrayList getListaInstrumentos() {
-        ArrayList listaAux = new ArrayList();
+    public ArrayList<String> getListaInstrumentos() {
+        ArrayList<String> listaAux = new ArrayList();
         for(ElementoParticipante e: grupo){
             listaAux.addAll(e.getListaInstrumentos());
         }
         return listaAux;
     }
 
-    public ArrayList getListaIdiomas(){
-        ArrayList listaAux = new ArrayList();
+    public ArrayList<String> getListaIdiomas(){
+        ArrayList<String> listaAux = new ArrayList();
         for(ElementoParticipante e:grupo){
             if(!listaAux.contains(e.getIdiomas())){
                 listaAux.addAll(e.getIdiomas());
@@ -66,8 +66,8 @@ public class Coach {
         }
         return listaAux;
     }
-    public ArrayList getListaParticipantesOrdenada(Comparador c){
-        ArrayList aux=new ArrayList(this.grupo);
+    public ArrayList<ElementoParticipante> getListaParticipantesOrdenada(Comparador c){
+        ArrayList<ElementoParticipante> aux=new ArrayList(this.grupo);
         Collections.sort(aux,c);
         return aux;
     }

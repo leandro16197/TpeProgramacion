@@ -1,5 +1,6 @@
 package TPE_Programacion.Criterio;
 
+import TPE_Programacion.ElementoParticipante;
 import TPE_Programacion.Participante;
 
 public class FiltroEdad implements Filtro {
@@ -10,7 +11,7 @@ public class FiltroEdad implements Filtro {
     }
 
     @Override
-    public boolean criterio(Participante p) {
+    public boolean criterio(ElementoParticipante p) {
         return p.getEdad()>this.edad;
     }
 }

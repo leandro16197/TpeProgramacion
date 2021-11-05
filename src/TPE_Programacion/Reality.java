@@ -15,6 +15,7 @@ public class Reality {
     public void addCoach(Coach c){
         this.entrenadores.add(c);
     }
+
     public int batalla(ElementoParticipante e1, ElementoParticipante e2, Comparator<ElementoParticipante> comp) {
         if(comp.compare(e1,e2)<0){
             return -1;
@@ -25,4 +26,5 @@ public class Reality {
         }
         return 0;
     }
+
 }
