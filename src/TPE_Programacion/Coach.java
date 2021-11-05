@@ -61,6 +61,7 @@ public class Coach {
                 listaAux.addAll(e.getListaInstrumentos());
             }
         }
+
         return listaAux;
     }
 

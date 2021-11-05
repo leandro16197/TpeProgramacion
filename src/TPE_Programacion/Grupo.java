@@ -1,7 +1,7 @@
 package TPE_Programacion;
 
 
-import TPE_Programacion.Comparadores.Comparador;
+
 import TPE_Programacion.Criterio.Filtro;
 
 import java.util.ArrayList;
@@ -125,7 +125,7 @@ public class Grupo extends ElementoParticipante {
     @Override
     public ArrayList<String> getListaGenero() {
         ArrayList<String> aux=new ArrayList();
-        for(ElementoParticipante e:grupo){
+        for(ElementoParticipante e:grupo) {
             aux.addAll(e.getListaGenero());
         }
         return aux;
