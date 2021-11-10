@@ -5,6 +5,7 @@ import TPE_Programacion.Comparadores.CompEdad;
 
 public class Main {
     public static void main(String []args){
+
         Participante pepe=new Participante("pepe","pipito",23);
         pepe.addGenero("rock");
         pepe.addIdioma("ingles");
@@ -35,9 +36,11 @@ public class Main {
         c2.addParticipante(kun);
         c2.addParticipante(carlos);
         System.out.println(c2.getParticipantes());
-        Reality r=new Reality("show");
-        r.addCoach(c);
-        r.addCoach(c2);
-        System.out.println(r.batalla(kun,carlos,edad));
+
+        Reality r=new Reality("show",edad);
+
+        r.batalla(c.getListaParticipantesOrdenada(r.getComp()).get(0),
+                c2.getListaParticipantesOrdenada(r.getComp()).get(0));
+
     }
 }

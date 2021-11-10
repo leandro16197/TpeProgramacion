@@ -5,7 +5,6 @@ package TPE_Programacion;
 import TPE_Programacion.Criterio.Filtro;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Grupo extends ElementoParticipante {
     private ArrayList<ElementoParticipante>grupo;
@@ -38,10 +37,11 @@ public class Grupo extends ElementoParticipante {
     @Override
     public ArrayList<String>  getPreferenciaMusical() {
         ArrayList<String>  aux =new ArrayList<>();
-        for (int i=0; i < grupo.size(); i++ ){
-            for(int j=0; j < grupo.get(i).getPreferenciaMusical().size();j++){
-                if(grupo.get(i).getPreferenciaMusical().get(j).equals(grupo.get(i+1).getPreferenciaMusical().get(j))) {
-                    aux.add(grupo.get(i).getPreferenciaMusical().get(j));
+        aux.addAll(grupo.get(0).getPreferenciaMusical());
+        for (ElementoParticipante e:grupo ){
+            for(int i=0; i < aux.size();i++){
+                if(!e.getPreferenciaMusical().contains(aux.get(i))) {
+                   aux.remove(i);
                 }
             }
         }

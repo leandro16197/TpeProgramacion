@@ -7,6 +7,7 @@ import TPE_Programacion.Criterio.Filtro;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 
 public class Coach {
@@ -28,8 +29,9 @@ public class Coach {
         this.nombre = nombre;
     }
 
-    public void addParticipante(ElementoParticipante e){
+    public boolean addParticipante(ElementoParticipante e){
         this.grupo.add(e);
+        return true;
     }
     public ArrayList getParticipantes(){
         return new ArrayList(this.grupo);
@@ -74,7 +76,7 @@ public class Coach {
         }
         return listaAux;
     }
-    public ArrayList<ElementoParticipante> getListaParticipantesOrdenada(Comparador c){
+    public ArrayList<ElementoParticipante> getListaParticipantesOrdenada(Comparator<ElementoParticipante> c){
         ArrayList<ElementoParticipante> aux=new ArrayList(this.grupo);
         Collections.sort(aux,c);
         return aux;

@@ -34,6 +34,7 @@ public class Participante extends ElementoParticipante{
 
     
     //agrega items de tipo String a cada una de las listas
+
     public void addGenero(String genero){
         this.generosMusicales.add(genero);
     }
