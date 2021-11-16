@@ -79,6 +79,7 @@ public class Coach {
     public ArrayList<ElementoParticipante> getListaParticipantesOrdenada(Comparator<ElementoParticipante> c){
         ArrayList<ElementoParticipante> aux=new ArrayList(this.grupo);
         Collections.sort(aux,c);
+        Collections.reverse(aux);
         return aux;
     }
 

@@ -6,16 +6,24 @@ public class Produccion {
     private ArrayList<Coach>coach;
     private ArrayList<TemaMusical>temas;
 
+    public Produccion() {
+        this.coach=new ArrayList<>();
+        this.temas=new ArrayList<>();
+    }
+
+    public void addCoach(Coach c){
+        this.coach.add(c);
+    }
+
     public boolean addParticipante(ElementoParticipante p){
         boolean agregado=false;
         int i=0;
-        while(i<this.coach.size() && agregado) {
+        while(i<this.coach.size() && !agregado) {
             if(this.coach.get(i).addParticipante(p)){
                 agregado=true;
                 return agregado;
             }
             i++;
-
         }
         return agregado;
     }

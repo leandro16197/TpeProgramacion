@@ -121,6 +121,7 @@ public class Participante extends ElementoParticipante{
     public String toString() {
         return "Nombre : "+this.getNombre()+" Apellido : "+this.getApellido()+" Edad : "+this.getEdad();
     }
+
     //filtro tema musical
 
 
@@ -143,4 +144,17 @@ public class Participante extends ElementoParticipante{
         }
         return false;
     }
+
+    @Override
+    public boolean TemaMuscial(TemaMusical t) {
+        if(this.cumpleIdioma(t.getIdioma())){
+            for(int i=0;i<t.getGenero().size();i++){
+                if(this.cumpleGenero(t.getGenero().get(i))){
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }

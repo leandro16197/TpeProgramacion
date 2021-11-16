@@ -182,6 +182,16 @@ public class Grupo extends ElementoParticipante {
         }
         return false;
     }
+
+    @Override
+    public boolean TemaMuscial(TemaMusical t) {
+        for(ElementoParticipante e:grupo){
+            if(e.TemaMuscial(t)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 

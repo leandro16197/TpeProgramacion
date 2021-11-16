@@ -39,4 +39,5 @@ public abstract class ElementoParticipante {
     //criterio TemaMusical preguntar
     public abstract boolean preferencia(ArrayList genero);
     public abstract boolean cumpleInstrumento(ArrayList instrumentos);
+    public abstract boolean TemaMuscial(TemaMusical t);
 }
